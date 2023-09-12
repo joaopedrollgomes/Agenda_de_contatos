@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: #358600;
+    color: #fff;
+    padding: 10px;
+    height: 68px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0); 
+}
+#nav img{
+    margin-left: 10px;
+    height: 55px;
+
+}
+
+#div-barra-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Ocupa o espaço restante no #nav */
+}
+
+#barra-pesquisa {
+    width: 60%; 
+    padding: 6px; 
+    border: 2px solid;
+    border-radius: 5px;
+    font-family: inherit;
+    margin-right: 10px;
+}
+#button-pesquisa{
+    padding: 7px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-family: inherit;
+}
+#button-pesquisa:hover{
+    cursor: pointer;
+    background-color: #9EE37D;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start; 
+
+}
+aside {
+    min-width: 180px;;
+    max-width: 200px;
+    padding: 20px;
+    background-color: #9EE37D; 
+    border-right: 2px solid #358600; 
+    box-shadow: 0px 0px 5px rgb(158, 158, 158); 
+}
+aside button{
+    padding: 8px;
+    background-color: #fff;
+    font-family: inherit;
+    margin-top: 15px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgb(158, 158, 158); 
+}
+aside button:hover{
+    cursor: pointer;
+    background-color: #d0f1c0;
+}
+
+#listaMenu a{
+    text-decoration: none; 
+    color: black;
+}
+
+#listaMenu img{
+    margin-right: 8px;
+}
+
+main {
+    height: 100vh;
+    flex-grow: 1; 
+    padding: 20px;
+    text-align: justify;
+    margin: 5%;
+}
+#listaContatos {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.contatos{
+   min-width: 507px;
+}
+
+#listaContatos li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-top: 2px solid #e7e7e7;
+    padding: 10px;
+    width: 100%;
+}
+#identificacao{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: gray;
+    width: 100%;
+    margin: 2rem auto;
+}
+
