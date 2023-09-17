@@ -1,8 +1,8 @@
 const contatos = [
-    { nome: "Marcela Ellen", telefone: "(81) 12345-6789" , email:"marcela@gmail.com"},
-    { nome: "Edenize Souza", telefone: "(81) 98765-4321" , email:"edenize@gmail.com"},
-    { nome: "João Pedro Gomes", telefone: "(81) 92175-6456" , email:"JoaoPedro@gmail.com"},
-    { nome: "Roberto Dias", telefone: "(81) 97354-6284" , email:"roberto@gmail.com"},
+    { nome: "Marcela Ellen", telefone: "(81) 12345-6789" , email:"marcela@gmail.com", grupo: "Amigos"},
+    { nome: "Edenize Souza", telefone: "(81) 98765-4321" , email:"edenize@gmail.com", grupo: "Amigos"},
+    { nome: "João Pedro Gomes", telefone: "(81) 92175-6456" , email:"JoaoPedro@gmail.com", grupo: "Amigos"},
+    { nome: "Roberto Dias", telefone: "(81) 97354-6284" , email:"roberto@gmail.com", grupo: "Amigos"},
     // Adicione mais contatos conforme necessário
 ];
 

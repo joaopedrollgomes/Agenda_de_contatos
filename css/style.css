@@ -54,11 +54,11 @@ body{
 
 }
 aside {
-    min-width: 180px;;
+    min-width: 180px;
     max-width: 200px;
     padding: 20px;
     background-color: #9EE37D; 
-    border-right: 2px solid #358600; 
+    border-right: 2px solid #358600;
     box-shadow: 0px 0px 5px rgb(158, 158, 158); 
 }
 aside button{
@@ -118,5 +118,53 @@ main {
     color: gray;
     width: 100%;
     margin: 2rem auto;
+}
+/*estilização da página para adicionar contato*/
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    padding: 50px;
+    background-color: #9EE37D;
+    border: 2px solid #358600; 
+    box-shadow: 5px 5px 5px rgb(158, 158, 158); 
+    border-radius: 10px;
+}
+
+input {
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 6px;
+    font-family: inherit;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    
+}
+button a {
+    text-decoration: none;
+    color: black;
+}
+button {
+    width: 100px;
+    height: 40px;
+    font-family: inherit;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+}
+
+button:hover {
+    background-color:#d0f1c0;
 }
 
