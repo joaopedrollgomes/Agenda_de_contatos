@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="agenda.css">
+    <title>Agenda de Contatos</title>
+</head>
+<body>
+    <header class="logo">
+        <div>
+        <img src="img/livro-de-contato.png" alt="">
+        <h1>AGENDA DE CONTATOS</h1>
+        </div>
+        
+        <a href="#adicionar">Adicionar Contato</a>
+        
+    </header>
+    <main>
+     <section id="contatos">
+        <div class="contatos">
+            <h2 id="titulo">Seus contatos:</h2>
+            <div id="div-barra-button">
+                <input type="text"id="barra-pesquisa" placeholder="Pesquisar contatos">
+                <button id="button-pesquisa"onclick="EXEMPLO:pesquisarContatos()">Pesquisar</button>
+            </div>
+            <div id="identificacao">
+                <p>Nome</p>
+                <p>Número</p>
+                <p>Email</p>
+                <p>Grupo</p>
+            </div>
+            <ul id="listaContatos">
+                <!-- Os elementos do array -->
+            </ul>
+        </div>
+        
+    </section>
+    <section id="adicionar">
+        <div class="caixa">
+            <form>
+                <input type="text" name="nome" placeholder="Nome">
+                <input type="text" name="telefone" placeholder="Número">
+                <input type="text" name="email" placeholder="Email">
+                <label for="text">Escolha um grupo:</label>
+                <select name="grupo">
+                    <optgroup label="Grupo">
+                        <option value=""></option>
+                        <option value="familia">Família</option>
+                        <option value="amigos">Amigos</option>
+                        <option value="trabalho">Trabalho</option>
+                    </optgroup>
+                </select>              
+        <div class="botoes">
+                <button type="submit" onclick="adicionarContato()">Adicionar Contato</button>
+                <a href="agenda.html">Voltar</a>
+        </div>
+            </form>
+        </div>
+    </section>
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+</html>

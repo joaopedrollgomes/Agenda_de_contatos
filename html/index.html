@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Agenda de contatos</title>
+</head>
+<body>
+    <header id="nav">
+        <div>
+            <img src="/img/livro-de-contato.png" alt="ícone">
+        </div>
+        <div id="div-barra-button">
+            <input type="text"id="barra-pesquisa" placeholder="Pesquisar contatos">
+            <button id="button-pesquisa"onclick="EXEMPLO:pesquisarContatos()">Pesquisar</button>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <aside>
+            <ul id="listaMenu">
+                <button>
+                    <a href="formulario.html">
+                        <img src="/img/adicionar-amigo.png" alt="Ícone">Adicionar contato
+                    </a>
+                </button>
+                <button>
+                    <a href="#">
+                        <img src="/img/adicionar-grupo.png" alt="Ícone">Criar grupo
+                    </a>
+                </button>
+            </ul>
+        </aside>
+
+        <main>
+
+            <div class="contatos">
+                <h1 id="titulo">Seus contatos:</h1>
+
+                <div id="identificacao">
+                    <p>Nome</p>
+                    <p>Número</p>
+                    <p>Email</p>
+                </div>
+
+                <ul id="listaContatos">
+                    <!-- Os elementos do array -->
+                </ul>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+}
+
+.logo {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    font-size: 15px;
+    margin: 30px;
+}
+.logo div {
+    display: flex;
+    align-items: center;
+
+}
+.logo a {
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: #fff;
+    padding-right: 30px;
+    transition: text-decoration 0.2s;
+}
+.logo a:hover {
+    text-decoration: overline;
+    color: #fff;
+}
+
+div li {
+    padding: 20px;
+    list-style: none;
+  
+}
+div a {
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: #fff;
+    transition: text-decoration 0.2s;
+}
+div a:hover {
+    text-decoration: overline;
+    color: #fff;
+}
+
+#listaContatos {
+    list-style: none;
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
+    color: #fff;
+    
+}
+
+#listaContatos li {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-top: 2px solid #e7e7e7;
+    width: 100%;
+    
+}
+
+#titulo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: #fff;
+    margin-left: 60px;
+    padding-top: 40px;
+    
+}
+
+#div-barra-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin-top: 30px;
+}
+
+#barra-pesquisa {
+    width: 60%; 
+    padding: 6px; 
+    border: 2px solid;
+    border-radius: 5px;
+    font-family: inherit;
+    margin-right: 10px;
+}
+#button-pesquisa{
+    padding: 7px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-family: inherit;
+}
+#button-pesquisa:hover{
+    cursor: pointer;
+    background-color:gray;
+}
+
+#identificacao {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: gray;
+    margin: 0 60px;
+    padding-top: 60px; 
+
+}
+#contatos a {
+    display: flex;
+    flex-direction: row-reverse;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: #fff;
+    margin-right: 60px;
+    margin-bottom: 200px;
+    transition: text-decoration 0.2s;
+}
+#contatos a:hover {
+    text-decoration: overline;
+}
+
+#adicionar {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+.caixa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+    padding: 50px;
+    border: 2px solid #fff; 
+    border-radius: 10px;
+
+}
+
+input {
+    width: 350px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 6px;
+    font-family: inherit;
+    background-color: #fff;
+}
+label {
+    color: #fff;
+    padding-bottom: 30px;
+    font-size: 20px;
+    height: 50px;
+}
+select {
+    width: 350px;
+    height: 50px;
+    background-color: #fff;
+    color: #000;
+    border: #fff;
+    border-radius: 10px;
+    
+}
+
+optgroup, option {
+    background-color:#fff;
+    color: #000;
+}
+
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    
+}
+button a {
+    text-decoration: none;
+    color: #fff;
+   
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.2s;
+   
+}
+button:hover {
+    background-color:gray;
+}
+
+
