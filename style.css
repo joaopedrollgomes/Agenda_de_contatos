@@ -3,13 +3,13 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .logo {
     display: flex;
     align-items:center;
     justify-content: space-between;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
     font-size: 15px;
     margin: 30px;
@@ -19,9 +19,11 @@
     align-items: center;
 
 }
+.logo h1{
+    margin-left: 5px;;
+}
 .logo a {
     text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
     color: #fff;
     padding-right: 30px;
@@ -39,7 +41,6 @@ div li {
 }
 div a {
     text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
     color: #fff;
     transition: text-decoration 0.2s;
@@ -55,36 +56,28 @@ div a:hover {
     margin-left: 60px;
     margin-right: 60px;
     color: #fff;
-    
-}
-
-.editar-button{
-    margin-left: 600px;
-    
-}
-
-.email {
-    margin-left: 360px;
-}
-
-.numero {
-    margin-left: 390px;
 }
 
 #listaContatos li {
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
     padding: 10px;
     margin-bottom: 10px;
     border-top: 2px solid #e7e7e7;
-    width: 100%;
-    
+    max-width: 100%;
+    grid-template-columns: repeat(5, 1fr) auto;
+}
+
+#botoes-lista{
+    display:flex;
+    grid-column: 5;
+}
+.deletar-button{
+    margin-left: 8px;
 }
 
 #titulo {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     color: #fff;
     margin-left: 60px;
     padding-top: 40px;
@@ -120,7 +113,7 @@ div a:hover {
 
 #identificacao {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     color: gray;
     margin: 0 60px;
     padding-top: 60px; 
@@ -130,7 +123,6 @@ div a:hover {
     display: flex;
     flex-direction: row-reverse;
     text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
     color: #fff;
     margin-right: 60px;
@@ -145,24 +137,39 @@ div a:hover {
     margin-top: 200px;
     margin-bottom: 100px;
 }
-.caixa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.Foramodal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
+.caixa {
+    background-color: #fff;
+    width: 50%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
 form {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     gap: 20px;
     padding: 50px;
-    border: 2px solid #fff; 
     border-radius: 10px;
 
 }
 
 input {
-    width: 350px;
+    width: 100%;
     height: 50px;
     border: 2px solid #fff;
     border-radius: 10px;
@@ -177,7 +184,7 @@ label {
     height: 50px;
 }
 select {
-    width: 350px;
+    width: 100%;
     height: 50px;
     background-color: #fff;
     color: #000;
@@ -191,9 +198,10 @@ optgroup, option {
     color: #000;
 }
 
-.botoes {
+.botao-add {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
     
 }
 button a {
@@ -205,7 +213,6 @@ button a {
 button {
     width: 100px;
     height: 50px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border: 2px solid #fff;
     border-radius: 15px;
     cursor: pointer;
