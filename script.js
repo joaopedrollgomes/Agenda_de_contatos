@@ -82,16 +82,17 @@ function pesquisarContatos() {
     listaAtualizada(contatosFiltrados);
 }
 
+
 // Função para abrir modal de add contato
 const abrirModalButton = document.getElementById("abrir-modal");
+const fecharModalButton = document.getElementById("fechar-modal")
 const Foramodal = document.getElementById("Foramodal");
 
 abrirModalButton.addEventListener("click", function() {
     Foramodal.style.display = "block";
 });
 
-Foramodal.addEventListener("click", function(event) {
-    if (event.target === Foramodal) {
-        Foramodal.style.display = "none";
-    }
+fecharModalButton.addEventListener("click", function() {
+    Foramodal.style.display = "none";
 });
+
