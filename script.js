@@ -40,12 +40,13 @@ function listaAtualizada(contatosExibidos = contatos) {
 
 // Função para editar um contato
 function editarContato(index) {
-    const novoNome = prompt('Novo Nome:', contatos[index].nome);
+     const novoNome = prompt('Novo Nome:', contatos[index].nome);
     const novoNumero = prompt('Novo Número:', contatos[index].numero);
     const novoEmail = prompt('Novo Email:', contatos[index].email);
+    const novoGrupo = prompt('Novo Grupo:', contatos[index].grupo);
 
-    if (novoNome !== null && novoNumero !== null && novoEmail !== null) {
-        contatos[index] = new Contato(novoNome, novoNumero, novoEmail);
+    if (novoNome !== null && novoNumero !== null && novoEmail !== null && novoGrupo !== null) {
+        contatos[index] = new Contato(novoNome, novoNumero, novoEmail, novoGrupo);
         listaAtualizada();
     }
 }
@@ -66,7 +67,7 @@ formulario.addEventListener('submit', function (event) {
     const numero = document.querySelector('input[name="telefone"]').value;
     const email = document.querySelector('input[name="email"]').value;
     const grupo = document.getElementById("selectGrupo").value;
-    addContato(nome, numero, email);
+    addContato(nome, numero, email, grupo);
     formulario.reset();
 });
 
