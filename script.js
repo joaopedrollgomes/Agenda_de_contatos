@@ -36,7 +36,7 @@ function listaAtualizada(contatosExibidos = contatos) {
         <div id="botoes-lista">
         <button 
         class="editar-button" onclick="editarContato(${index})">
-        <i><img class="icon" src="/img/do-utilizador.png"></i>
+        <i><img class="iconEditar" class="icon" src="/img/do-utilizador.png"></i>
         <div class="text">Editar</div>
         </button>
         <button class="deletar-button" onclick="deletarContato(${index})">
@@ -49,8 +49,6 @@ function listaAtualizada(contatosExibidos = contatos) {
         listaContatos.appendChild(itemLista);
     });
 }
-
-
 // Função para editar um contato
 function editarContato(index) {
     const contato = contatos[index];
@@ -74,7 +72,7 @@ function editarContato(index) {
         const novoEmail = form.email.value;
         const novoGrupo = form.grupo.value;
 
-        if (novoNome !== '' && novoNumero !== '' && novoEmail !== '' && novoGrupo !== '') {
+        if (novoNome !== '' && novoNumero !== '' && novoEmail !== '' || novoGrupo !== '') {
             contatos[index] = new Contato(novoNome, novoNumero, novoEmail, novoGrupo);
             listaAtualizada();
             edicaoModal.style.display = 'none';
