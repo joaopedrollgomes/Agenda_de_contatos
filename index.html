@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Agenda de Contatos</title>
+</head>
+
+<body>
+    <header class="logo">
+        <div>
+            <img src="img/livro-de-contato.png" alt="">
+            <h1>AGENDA DE CONTATOS</h1>
+        </div>
+    
+            <button id="abrir-modal">
+            <i><img class="icon" src="/img/adicionar-usuario30px.png"></i>
+             <div class="text">Adicionar Contato</div>
+            </button>
+
+
+
+    </header>
+    <main>
+        <section id="contatos">
+            <div class="contatos">
+                <h2 id="titulo">Seus contatos:</h2>
+                <div id="div-barra-button">
+                    <input type="text" id="barra-pesquisa" placeholder="Pesquisar contatos">
+                    <button id="button-pesquisa" onclick="pesquisarContatos()">
+                        <i><img class="icon" src="/img/lupa.png"></i>
+                        <div class="text">Pesquisar</div>
+                    </button>
+                </div>
+                <div id="identificacao">
+                    <p class="nome">Nome</p>
+                    <p class="numero">Número</p>
+                    <p class="email">Email</p>
+                    <p class="grupo">Grupo</p>
+                </div>
+                <ul id="listaContatos">
+                    <!-- contatos serão add aqui -->
+                </ul>
+            </div>
+
+        </section>
+        <div id="Foramodal" class="Foramodal">
+            <section id="adicionar">
+                <div class="caixa">
+                    <form id="addContatoForm">
+                        <input type="text" name="nome" placeholder="Nome">
+                        <input type="text" name="telefone" placeholder="Número">
+                        <input type="text" name="email" placeholder="Email">
+                        <label for="text">Escolha um grupo:</label>
+                        <select id="selectGrupo" name="grupo">
+                            <optgroup label="Grupo">
+                                <option value=""></option>
+                                <option value="Família">Família</option>
+                                <option value="Amigos">Amigos</option>
+                                <option value="Trabalho">Trabalho</option>
+                            </optgroup>
+                        </select>
+                        <div class="botao-add">
+                            <button type="submit" id="fechar-modal" onclick="adicionarContato()">
+                                <i><img class="icon" src="/img/adicionar-usuario30px.png"></i>
+                                <div class="text"> Adicionar Contato</div>
+                            </button>
+
+                            <button type="button" id="fechar-formulario" onclick="fecharFormulario()">
+                                <i><img class="icon" src="/img/sair.png"></i>
+                                <div class="text">Fechar</div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <div id="edicaoModal" class="Foramodal">
+            <section id="adicionar">
+                <div class="caixa">
+                    <form id="edicaoForm">
+                        <input type="text" name="nome" placeholder="Nome">
+                        <input type="text" name="telefone" placeholder="Número">
+                        <input type="text" name="email" placeholder="Email">
+                        <label for="text">Escolha um grupo:</label>
+                        <select id="selectGrupo" name="grupo">
+                            <optgroup label="Grupo">
+                                <option value=""></option>
+                                <option value="Família">Família</option>
+                                <option value="Amigos">Amigos</option>
+                                <option value="Trabalho">Trabalho</option>
+                            </optgroup>
+                        </select>
+                        <div class="botao-add">
+                            <button type="submit">
+                                <i><img class="icon" src="/img/do-utilizador.png"></i>
+                                <div class="text">Confirmar Edição</div>
+                            </button>
+                            <button id="fechar-edicao-modal" onclick="fecharEdicao()">
+                                <i><img class="icon" src="/img/sair.png"></i>
+                                <div class="text">Fechar</div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+    <div id="mobile-content"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
