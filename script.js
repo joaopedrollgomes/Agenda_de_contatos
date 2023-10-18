@@ -8,13 +8,19 @@ class Contato {
 }
 
 const contatos = [];
-
+//add contato
 function addContato(nome, numero, email, grupo) {
     grupo = document.getElementById("selectGrupo").value;
     const contato = new Contato(nome, numero, email, grupo);
     contatos.push(contato);
     listaAtualizada();
 }
+
+function fecharFormulario() {
+    const formularioAdicao = document.getElementById('Foramodal');
+    formularioAdicao.style.display = 'none';
+}
+
 
 // Função para atualizar a lista de contatos
 function listaAtualizada(contatosExibidos = contatos) {
@@ -40,15 +46,52 @@ function listaAtualizada(contatosExibidos = contatos) {
 
 // Função para editar um contato
 function editarContato(index) {
-    const novoNome = prompt('Novo Nome:', contatos[index].nome);
-    const novoNumero = prompt('Novo Número:', contatos[index].numero);
-    const novoEmail = prompt('Novo Email:', contatos[index].email);
+    const contato = contatos[index];
+    
+    //campos do formulário de edição
+    const form = document.getElementById('edicaoForm');
+    form.nome.value = contato.nome;
+    form.telefone.value = contato.numero;
+    form.email.value = contato.email;
+    form.grupo.value = contato.grupo;
 
-    if (novoNome !== null && novoNumero !== null && novoEmail !== null) {
-        contatos[index] = new Contato(novoNome, novoNumero, novoEmail);
-        listaAtualizada();
-    }
+    //formulário de edição
+    const edicaoModal = document.getElementById('edicaoModal');
+    edicaoModal.style.display = 'block';
+
+    //contato editado ao clicar em "Confirmar Edição"
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const novoNome = form.nome.value;
+        const novoNumero = form.telefone.value;
+        const novoEmail = form.email.value;
+        const novoGrupo = form.grupo.value;
+
+        if (novoNome !== '' && novoNumero !== '' && novoEmail !== '' && novoGrupo !== '') {
+            contatos[index] = new Contato(novoNome, novoNumero, novoEmail, novoGrupo);
+            listaAtualizada();
+            edicaoModal.style.display = 'none';
+        }
+    });
 }
+
+// Função para fechar o formulário de edição
+function fecharEdicao() {
+    const edicaoModal = document.getElementById('edicaoModal');
+    edicaoModal.style.display = 'none';
+}
+
+// function editarContato(index) {
+//      const novoNome = prompt('Novo Nome:', contatos[index].nome);
+//     const novoNumero = prompt('Novo Número:', contatos[index].numero);
+//     const novoEmail = prompt('Novo Email:', contatos[index].email);
+//     const novoGrupo = prompt('Novo Grupo:', contatos[index].grupo);
+
+//     if (novoNome !== null && novoNumero !== null && novoEmail !== null && novoGrupo !== null) {
+//         contatos[index] = new Contato(novoNome, novoNumero, novoEmail, novoGrupo);
+//         listaAtualizada();
+//     }
+// }
 
 // Função para excluir um contato
 function deletarContato(index) {
@@ -66,7 +109,7 @@ formulario.addEventListener('submit', function (event) {
     const numero = document.querySelector('input[name="telefone"]').value;
     const email = document.querySelector('input[name="email"]').value;
     const grupo = document.getElementById("selectGrupo").value;
-    addContato(nome, numero, email);
+    addContato(nome, numero, email, grupo);
     formulario.reset();
 });
 
@@ -81,16 +124,17 @@ function pesquisarContatos() {
     listaAtualizada(contatosFiltrados);
 }
 
+
 // Função para abrir modal de add contato
 const abrirModalButton = document.getElementById("abrir-modal");
+const fecharModalButton = document.getElementById("fechar-modal")
 const Foramodal = document.getElementById("Foramodal");
 
 abrirModalButton.addEventListener("click", function() {
     Foramodal.style.display = "block";
 });
 
-Foramodal.addEventListener("click", function(event) {
-    if (event.target === Foramodal) {
-        Foramodal.style.display = "none";
-    }
+fecharModalButton.addEventListener("click", function() {
+    Foramodal.style.display = "none";
 });
+

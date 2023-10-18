@@ -17,7 +17,7 @@
         </div>
 
         <button id="abrir-modal">Adicionar Contato</button>
-        
+
 
     </header>
     <main>
@@ -41,27 +41,54 @@
 
         </section>
         <div id="Foramodal" class="Foramodal">
-        <section id="adicionar">
-            <div class="caixa">
-                <form>
-                    <input type="text" name="nome" placeholder="Nome">
-                    <input type="text" name="telefone" placeholder="Número">
-                    <input type="text" name="email" placeholder="Email">
-                    <label for="text">Escolha um grupo:</label>
-                    <select id="selectGrupo" name="grupo">
-                        <optgroup label="Grupo">
-                            <option value=""></option>
-                            <option value="Família">Família</option>
-                            <option value="Amigos">Amigos</option>
-                            <option value="Trabalho">Trabalho</option>
-                        </optgroup>
-                    </select>
-                    <div class="botao-add">
-                        <button type="submit" onclick="adicionarContato()">Adicionar Contato</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+            <section id="adicionar">
+                <div class="caixa">
+                    <form>
+                        <input type="text" name="nome" placeholder="Nome">
+                        <input type="text" name="telefone" placeholder="Número">
+                        <input type="text" name="email" placeholder="Email">
+                        <label for="text">Escolha um grupo:</label>
+                        <select id="selectGrupo" name="grupo">
+                            <optgroup label="Grupo">
+                                <option value=""></option>
+                                <option value="Família">Família</option>
+                                <option value="Amigos">Amigos</option>
+                                <option value="Trabalho">Trabalho</option>
+                            </optgroup>
+                        </select>
+                        <div class="botao-add">
+                            <button type="submit" id="fechar-modal" onclick="adicionarContato()">Adicionar Contato</button>
+                            <button type="button" id="fechar-formulario" onclick="fecharFormulario()">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <div id="edicaoModal" class="Foramodal">
+            <section id="adicionar">
+                <div class="caixa">
+                    <form id="edicaoForm">
+                        <input type="text" name="nome" placeholder="Nome">
+                        <input type="text" name="telefone" placeholder="Número">
+                        <input type="text" name="email" placeholder="Email">
+                        <label for="text">Escolha um grupo:</label>
+                        <select id="selectGrupo" name="grupo">
+                            <optgroup label="Grupo">
+                                <option value=""></option>
+                                <option value="Família">Família</option>
+                                <option value="Amigos">Amigos</option>
+                                <option value="Trabalho">Trabalho</option>
+                            </optgroup>
+                        </select>
+                        <div class="botao-add">
+                            <button type="submit">Confirmar Edição</button>
+                            <button id="fechar-edicao-modal" onclick="fecharEdicao()">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            
         </div>
     </main>
 
