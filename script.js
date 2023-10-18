@@ -34,8 +34,15 @@ function listaAtualizada(contatosExibidos = contatos) {
         itemLista.innerHTML = `
         <span class="nome">${contato.nome}</span> <span class="numero">${contato.numero}</span> <span class="email">${contato.email}</span><span class="grupo">${contato.grupo}</span>
         <div id="botoes-lista">
-        <button class="editar-button" onclick="editarContato(${index})">Editar</button>
-        <button class="deletar-button" onclick="deletarContato(${index})">Excluir</button>
+        <button 
+        class="editar-button" onclick="editarContato(${index})">
+        <i><img class="icon" src="/img/do-utilizador.png"></i>
+        <div class="text">Editar</div>
+        </button>
+        <button class="deletar-button" onclick="deletarContato(${index})">
+        <i><img class="icon" src="/img/excluir.png"></i>
+        <div class="text">Excluir</div>
+        </button>
         </div>
       `;
 
@@ -137,4 +144,6 @@ abrirModalButton.addEventListener("click", function() {
 fecharModalButton.addEventListener("click", function() {
     Foramodal.style.display = "none";
 });
+
+
 

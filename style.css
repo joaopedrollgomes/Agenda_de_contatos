@@ -2,10 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .logo {
     display: flex;
     align-items:center;
@@ -20,18 +18,19 @@
 
 }
 .logo h1{
-    margin-left: 5px;;
+    margin-left: 5px;
+    color: #000;
 }
 .logo a {
     text-decoration: none;
     font-size: 30px;
-    color: #fff;
+    color: #000000;
     padding-right: 30px;
     transition: text-decoration 0.2s;
 }
 .logo a:hover {
     text-decoration: overline;
-    color: #fff;
+    color: #2c2c2c;
 }
 
 div li {
@@ -42,12 +41,12 @@ div li {
 div a {
     text-decoration: none;
     font-size: 30px;
-    color: #fff;
+    color: #000000;
     transition: text-decoration 0.2s;
 }
 div a:hover {
     text-decoration: overline;
-    color: #fff;
+    color: #000000;
 }
 
 #listaContatos {
@@ -55,7 +54,7 @@ div a:hover {
     margin-top: 30px;
     margin-left: 60px;
     margin-right: 60px;
-    color: #fff;
+    color: #000000;
 }
 
 #listaContatos li {
@@ -63,7 +62,7 @@ div a:hover {
     align-items: center;
     padding: 10px;
     margin-bottom: 10px;
-    border-top: 2px solid #e7e7e7;
+    border-top: 2px solid #000000;
     max-width: 100%;
     grid-template-columns: repeat(5, 1fr) auto;
 }
@@ -78,7 +77,7 @@ div a:hover {
 
 #titulo {
     font-size: 30px;
-    color: #fff;
+    color:#000;
     margin-left: 60px;
     padding-top: 40px;
     
@@ -124,7 +123,7 @@ div a:hover {
     flex-direction: row-reverse;
     text-decoration: none;
     font-size: 30px;
-    color: #fff;
+    color: #000000;
     margin-right: 60px;
     margin-bottom: 200px;
     transition: text-decoration 0.2s;
@@ -148,7 +147,7 @@ div a:hover {
 }
 
 .caixa {
-    background-color: #fff;
+    background-color: #ffffff;
     width: 50%;
     max-width: 600px;
     margin: 0 auto;
@@ -157,7 +156,6 @@ div a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 form {
@@ -172,14 +170,14 @@ form {
 input {
     width: 100%;
     height: 50px;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     border-radius: 10px;
     padding: 6px;
     font-family: inherit;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 label {
-    color: #fff;
+    color: #000000;
     padding-bottom: 30px;
     font-size: 20px;
     height: 50px;
@@ -187,16 +185,15 @@ label {
 select {
     width: 100%;
     height: 50px;
-    background-color: #fff;
     color: #000;
-    border: #fff;
+    border:2px solid #000000;
     border-radius: 10px;
     
 }
 
 optgroup, option {
-    background-color:#fff;
-    color: #000;
+    color: #000000;
+    border: #000;
 }
 
 .botao-add {
@@ -212,63 +209,74 @@ button a {
 button {
     width: 100px;
     height: 50px;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     border-radius: 15px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #ffffff;
     transition: background-color 0.2s;
    
 }
 button:hover {
     background-color:gray;
 }
+.icon{
+    display:none;
+}
+
 /*telas menores (até 768px de largura) */
 @media screen and (max-width: 768px) {
-    .logo {
-        font-size: 18px;
+    *{
+        font-size: 16px;
     }
 
     #listaContatos {
         margin: 10px;
     }
-
+    .icon{
+        display:inline;
+    }
+    div.text{
+        display: none;
+    }
+    button{
+        width: 30px;
+        height: 30px;
+        border: none;
+    };
     #titulo {
-        font-size: 24px;
+       display: none !important;
     }
-
-    #identificacao {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
+    #barra-pesquisa {
+        width: 60%; 
+        padding: 3px; 
+        border: 2px solid;
+        border-radius: 5px;
+        height: 20%;
     }
-
-
+    #button-pesquisa{
+        border: none;
+        margin-bottom: 5px;
+    }
+    #abrir-modal{
+        border: none;
+    }
+    form{
+        padding: 20px
+    }
+    form label{
+        font-size: 16px;
+        padding-bottom: 3px;
+    }
+    .caixa{
+        width: 80%;
+    }
+    #identificacao{
+        margin-left: 20px !important;
+    }
+    .email, .grupo {
+        display: none;
+    }
+    .nome{
+       grid-column: span 2;
+    }
 }
-
-/*telas maiores (acima de 768px de largura) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .logo {
-        font-size: 24px;
-    }
-
-    #listaContatos {
-        margin: 20px;
-    }
-
-    #titulo {
-        font-size: 30px;
-    }
-
-    #identificacao {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 10px;
-        margin: 20px;
-    }
-
-}
-
-
-
-
