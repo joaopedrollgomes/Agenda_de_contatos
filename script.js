@@ -8,6 +8,7 @@ class Contato {
 }
 
 const contatos = [];
+
 //add contato
 function addContato(nome, numero, email, grupo) {
     grupo = document.getElementById("selectGrupo").value;
@@ -16,11 +17,22 @@ function addContato(nome, numero, email, grupo) {
     listaAtualizada();
 }
 
-function fecharFormulario() {
-    const formularioAdicao = document.getElementById('Foramodal');
-    formularioAdicao.style.display = 'none';
-}
+const abrirModalButton = document.getElementById("abrir-modal");
+const fecharModalButton = document.getElementById("fechar-modal");
+const bottonFechar = document.getElementById("fechar-formulario");
+const Foramodal = document.getElementById("Foramodal");
 
+abrirModalButton.addEventListener("click", function () {
+    Foramodal.style.display = "block";
+});
+
+fecharModalButton.addEventListener("click", function () {
+    Foramodal.style.display = "none";
+});
+
+bottonFechar.addEventListener('click', function () {
+    Foramodal.style.display = "none";
+});
 
 // Função para atualizar a lista de contatos
 function listaAtualizada(contatosExibidos = contatos) {
@@ -34,7 +46,7 @@ function listaAtualizada(contatosExibidos = contatos) {
         itemLista.innerHTML = `
         <span class="nome">${contato.nome}</span> <span class="numero">${contato.numero}</span> <span class="email">${contato.email}</span><span class="grupo">${contato.grupo}</span>
         <div id="botoes-lista">
-        <button class="editar-button" onclick="editarContato(${index})">Editar</button>
+        <button class="editar-button" onclick="criarFormularioEdicao(contatos[${index}], ${index})">Editar</button>
         <button class="deletar-button" onclick="deletarContato(${index})">Excluir</button>
         </div>
       `;
@@ -43,29 +55,42 @@ function listaAtualizada(contatosExibidos = contatos) {
     });
 }
 
-
-// Função para editar um contato
-function editarContato(index) {
-    const contato = contatos[index];
-    
-    //campos do formulário de edição
-    const form = document.getElementById('edicaoForm');
-    form.nome.value = contato.nome;
-    form.telefone.value = contato.numero;
-    form.email.value = contato.email;
-    form.grupo.value = contato.grupo;
-
-    //formulário de edição
+// Função formulário de edição
+function criarFormularioEdicao(contato, index) {
     const edicaoModal = document.getElementById('edicaoModal');
-    edicaoModal.style.display = 'block';
 
-    //contato editado ao clicar em "Confirmar Edição"
+    const form = document.createElement('section');
+    form.id = 'adicionar';
+
+    form.innerHTML = `
+    <div class="caixa">
+    <form>
+        <input type="text" class="edicao-nome" name="nome" placeholder="Nome" value="${contato.nome}">
+        <input type="text" class="edicao-telefone" name="telefone" placeholder="Número" value="${contato.numero}">
+        <input type="text" class="edicao-email" name="email" placeholder="Email" value="${contato.email}">
+        <label for="text">Escolha um grupo:</label>
+        <select class="edicao-grupo" name="grupo">
+            <optgroup label="Grupo">
+                <option value=""></option>
+                <option value="Família">Família</option>
+                <option value="Amigos">Amigos</option>
+                <option value="Trabalho">Trabalho</option>
+            </optgroup>
+        </select>
+        <div class="botao-add">
+            <button type="submit">Confirmar Edição</button>
+            <button class="fechar-edicao-modal" onclick="fecharEdicao()">Fechar</button>
+        </div>
+        </form>
+        </div>
+    `;
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        const novoNome = form.nome.value;
-        const novoNumero = form.telefone.value;
-        const novoEmail = form.email.value;
-        const novoGrupo = form.grupo.value;
+        const novoNome = form.querySelector('.edicao-nome').value;
+        const novoNumero = form.querySelector('.edicao-telefone').value;
+        const novoEmail = form.querySelector('.edicao-email').value;
+        const novoGrupo = form.querySelector('.edicao-grupo').value;
 
         if (novoNome !== '' && novoNumero !== '' && novoEmail !== '' && novoGrupo !== '') {
             contatos[index] = new Contato(novoNome, novoNumero, novoEmail, novoGrupo);
@@ -73,25 +98,18 @@ function editarContato(index) {
             edicaoModal.style.display = 'none';
         }
     });
+
+    edicaoModal.innerHTML = ''; // Limpa qualquer formulário de edição anterior
+    edicaoModal.appendChild(form);
+    edicaoModal.style.display = 'block';
 }
+
 
 // Função para fechar o formulário de edição
 function fecharEdicao() {
     const edicaoModal = document.getElementById('edicaoModal');
     edicaoModal.style.display = 'none';
 }
-
-// function editarContato(index) {
-//      const novoNome = prompt('Novo Nome:', contatos[index].nome);
-//     const novoNumero = prompt('Novo Número:', contatos[index].numero);
-//     const novoEmail = prompt('Novo Email:', contatos[index].email);
-//     const novoGrupo = prompt('Novo Grupo:', contatos[index].grupo);
-
-//     if (novoNome !== null && novoNumero !== null && novoEmail !== null && novoGrupo !== null) {
-//         contatos[index] = new Contato(novoNome, novoNumero, novoEmail, novoGrupo);
-//         listaAtualizada();
-//     }
-// }
 
 // Função para excluir um contato
 function deletarContato(index) {
@@ -123,18 +141,3 @@ function pesquisarContatos() {
     );
     listaAtualizada(contatosFiltrados);
 }
-
-
-// Função para abrir modal de add contato
-const abrirModalButton = document.getElementById("abrir-modal");
-const fecharModalButton = document.getElementById("fechar-modal")
-const Foramodal = document.getElementById("Foramodal");
-
-abrirModalButton.addEventListener("click", function() {
-    Foramodal.style.display = "block";
-});
-
-fecharModalButton.addEventListener("click", function() {
-    Foramodal.style.display = "none";
-});
-
