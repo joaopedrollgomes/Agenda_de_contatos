@@ -200,9 +200,7 @@ optgroup, option {
 
 .botao-add {
     display: flex;
-    justify-content: center;
-
-    
+    justify-content: space-around;  
 }
 button a {
     text-decoration: none;
@@ -223,3 +221,53 @@ button {
 button:hover {
     background-color:gray;
 }
+/*telas menores (até 768px de largura) */
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    #listaContatos {
+        margin: 10px;
+    }
+
+    #titulo {
+        font-size: 24px;
+    }
+
+    #identificacao {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+
+}
+
+/*telas maiores (acima de 768px de largura) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    #listaContatos {
+        margin: 20px;
+    }
+
+    #titulo {
+        font-size: 30px;
+    }
+
+    #identificacao {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        margin: 20px;
+    }
+
+}
+
+
+
+
