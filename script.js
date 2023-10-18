@@ -36,7 +36,7 @@ function listaAtualizada(contatosExibidos = contatos) {
         <div id="botoes-lista">
         <button 
         class="editar-button" onclick="editarContato(${index})">
-        <i><img class="iconEditar" class="icon" src="/img/do-utilizador.png"></i>
+        <i><img class="icon" src="/img/do-utilizador.png"></i>
         <div class="text">Editar</div>
         </button>
         <button class="deletar-button" onclick="deletarContato(${index})">
@@ -124,7 +124,7 @@ listaAtualizada();
 function pesquisarContatos() {
     const nomePesquisa = document.getElementById("barra-pesquisa").value.toLowerCase();
     const contatosFiltrados = contatos.filter((contato) =>
-        contato.nome.toLowerCase().includes(nomePesquisa)
+        contato.nome.toLowerCase().startsWith(nomePesquisa)
     );
     listaAtualizada(contatosFiltrados);
 }
