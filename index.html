@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>Agenda de Contatos</title>
 </head>
 
@@ -16,23 +17,28 @@
             <h1>AGENDA DE CONTATOS</h1>
         </div>
 
-        <button id="abrir-modal">Adicionar Contato</button>
-
-
+        <button id="abrir-modal">
+            <i><img class="icon" src="/img/adicionar-usuario30px.png"></i>
+             <div class="text">Adicionar Contato</div>
+            </button>
     </header>
+
     <main>
         <section id="contatos">
             <div class="contatos">
                 <h2 id="titulo">Seus contatos:</h2>
                 <div id="div-barra-button">
                     <input type="text" id="barra-pesquisa" placeholder="Pesquisar contatos">
-                    <button id="button-pesquisa" onclick="pesquisarContatos()">Pesquisar</button>
+                    <button id="button-pesquisa" onclick="pesquisarContatos()">
+                        <i><img class="icon" src="/img/lupa.png"></i>
+                        <div class="text">Pesquisar</div>
+                    </button>
                 </div>
                 <div id="identificacao">
-                    <p>Nome</p>
-                    <p>Número</p>
-                    <p>Email</p>
-                    <p>Grupo</p>
+                    <p class="nome">Nome</p>
+                    <p class="numero">Número</p>
+                    <p class="email">Email</p>
+                    <p class="grupo">Grupo</p>
                 </div>
                 <ul id="listaContatos">
                     <!-- contatos serão add aqui -->
@@ -43,9 +49,9 @@
         <div id="Foramodal" class="Foramodal">
             <section id="adicionar">
                 <div class="caixa">
-                    <form>
-                        <input type="text" name="nome" placeholder="Nome">
-                        <input type="text" name="telefone" placeholder="Número">
+                    <form id="addContatoForm">
+                         <input type="text" name="nome" placeholder="Nome" required>
+                        <input type="text" name="telefone" placeholder="Número" required>
                         <input type="text" name="email" placeholder="Email">
                         <label for="text">Escolha um grupo:</label>
                         <select id="selectGrupo" name="grupo">
@@ -57,24 +63,28 @@
                             </optgroup>
                         </select>
                         <div class="botao-add">
-                            <button type="submit" id="fechar-modal" onclick="adicionarContato()">Adicionar
-                                Contato</button>
-                            <button type="button" id="fechar-formulario">Fechar</button>
+                            <button type="submit" id="fechar-modal" onclick="adicionarContato()">
+                                <i><img class="icon" src="/img/adicionar-usuario30px.png"></i>
+                                <div class="text"> Adicionar Contato</div>
+                            </button>
+
+                            <button type="button" id="fechar-formulario" onclick="fecharFormulario()">
+                                <i><img class="icon" src="/img/sair.png"></i>
+                                <div class="text">Fechar</div>
+                            </button>
                         </div>
                     </form>
                 </div>
             </section>
         </div>
 
-        <!-- Adicione um formulário de edição separado para cada contato -->
-        <!-- Adicione um formulário de edição separado para cada contato com IDs e classes únicas -->
+        <!--formulário de edição separado para cada contato -->
         <div id="edicaoModal" class="Foramodal">
-            
+            <!-- form aqui -->
         </div>
 
-
     </main>
-
+    <div id="mobile-content"></div>
     <script src="script.js"></script>
 </body>
 

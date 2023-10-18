@@ -46,8 +46,10 @@ function listaAtualizada(contatosExibidos = contatos) {
         itemLista.innerHTML = `
         <span class="nome">${contato.nome}</span> <span class="numero">${contato.numero}</span> <span class="email">${contato.email}</span><span class="grupo">${contato.grupo}</span>
         <div id="botoes-lista">
-        <button class="editar-button" onclick="criarFormularioEdicao(contatos[${index}], ${index})">Editar</button>
-        <button class="deletar-button" onclick="deletarContato(${index})">Excluir</button>
+        <button class="editar-button" onclick="criarFormularioEdicao(contatos[${index}], ${index})"><i><img class="icon" src="/img/do-utilizador.png"></i>
+        <div class="text">Editar</div></button>
+        <button class="deletar-button" onclick="deletarContato(${index})"><i><img class="icon" src="/img/excluir.png"></i>
+        <div class="text">Excluir</div></button>
         </div>
       `;
 
@@ -59,17 +61,17 @@ function listaAtualizada(contatosExibidos = contatos) {
 function criarFormularioEdicao(contato, index) {
     const edicaoModal = document.getElementById('edicaoModal');
 
-    const form = document.createElement('section');
-    form.id = 'adicionar';
+    const section = document.createElement('section');
+    section.id = 'adicionar';
 
-    form.innerHTML = `
+    section.innerHTML = `
     <div class="caixa">
-    <form>
+    <form id="edicaoForm">
         <input type="text" class="edicao-nome" name="nome" placeholder="Nome" value="${contato.nome}">
         <input type="text" class="edicao-telefone" name="telefone" placeholder="Número" value="${contato.numero}">
         <input type="text" class="edicao-email" name="email" placeholder="Email" value="${contato.email}">
         <label for="text">Escolha um grupo:</label>
-        <select class="edicao-grupo" name="grupo">
+        <select class="edicao-grupo" id="selectGrupo" name="grupo">
             <optgroup label="Grupo">
                 <option value=""></option>
                 <option value="Família">Família</option>
@@ -78,19 +80,25 @@ function criarFormularioEdicao(contato, index) {
             </optgroup>
         </select>
         <div class="botao-add">
-            <button type="submit">Confirmar Edição</button>
-            <button class="fechar-edicao-modal" onclick="fecharEdicao()">Fechar</button>
+            <button type="submit">
+                <i><img class="icon" src="/img/do-utilizador.png"></i>
+                <div class="text">Confirmar Edição</div>
+            </button>
+            <button class="fechar-edicao-modal" onclick="fecharEdicao()">
+                <i><img class="icon" src="/img/sair.png"></i>
+                <div class="text">Fechar</div>
+            </button>
         </div>
         </form>
         </div>
     `;
 
-    form.addEventListener('submit', function (event) {
+    section.addEventListener('submit', function (event) {
         event.preventDefault();
-        const novoNome = form.querySelector('.edicao-nome').value;
-        const novoNumero = form.querySelector('.edicao-telefone').value;
-        const novoEmail = form.querySelector('.edicao-email').value;
-        const novoGrupo = form.querySelector('.edicao-grupo').value;
+        const novoNome = section.querySelector('.edicao-nome').value;
+        const novoNumero = section.querySelector('.edicao-telefone').value;
+        const novoEmail = section.querySelector('.edicao-email').value;
+        const novoGrupo = section.querySelector('.edicao-grupo').value;
 
         if (novoNome !== '' && novoNumero !== '' && novoEmail !== '' && novoGrupo !== '') {
             contatos[index] = new Contato(novoNome, novoNumero, novoEmail, novoGrupo);
@@ -100,7 +108,7 @@ function criarFormularioEdicao(contato, index) {
     });
 
     edicaoModal.innerHTML = ''; // Limpa qualquer formulário de edição anterior
-    edicaoModal.appendChild(form);
+    edicaoModal.appendChild(section);
     edicaoModal.style.display = 'block';
 }
 
@@ -133,11 +141,11 @@ formulario.addEventListener('submit', function (event) {
 
 listaAtualizada();
 
-
+//busca de contatos por o nome
 function pesquisarContatos() {
     const nomePesquisa = document.getElementById("barra-pesquisa").value.toLowerCase();
     const contatosFiltrados = contatos.filter((contato) =>
-        contato.nome.toLowerCase().includes(nomePesquisa)
+        contato.nome.toLowerCase().startsWith(nomePesquisa)
     );
     listaAtualizada(contatosFiltrados);
 }
