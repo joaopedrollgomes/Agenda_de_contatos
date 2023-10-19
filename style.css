@@ -21,33 +21,6 @@
     margin-left: 5px;
     color: #000;
 }
-.logo a {
-    text-decoration: none;
-    font-size: 30px;
-    color: #000000;
-    padding-right: 30px;
-    transition: text-decoration 0.2s;
-}
-.logo a:hover {
-    text-decoration: overline;
-    color: #2c2c2c;
-}
-
-div li {
-    padding: 20px;
-    list-style: none;
-  
-}
-div a {
-    text-decoration: none;
-    font-size: 30px;
-    color: #000000;
-    transition: text-decoration 0.2s;
-}
-div a:hover {
-    text-decoration: overline;
-    color: #000000;
-}
 
 #listaContatos {
     list-style: none;
