@@ -100,7 +100,7 @@ function criarFormularioEdicao(contato, index) {
         const novoEmail = section.querySelector('.edicao-email').value;
         const novoGrupo = section.querySelector('.edicao-grupo').value;
 
-        if (novoNome !== '' && novoNumero !== '' && novoEmail !== '' && novoGrupo !== '') {
+        if (novoNome !== '' && novoNumero !== '' && novoEmail !== '' || novoGrupo !== '') {
             contatos[index] = new Contato(novoNome, novoNumero, novoEmail, novoGrupo);
             listaAtualizada();
             edicaoModal.style.display = 'none';
