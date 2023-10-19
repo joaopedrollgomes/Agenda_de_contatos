@@ -14,7 +14,7 @@ Aplicar nossos conhecimentos em um projeto prático, aprimorar habilidades de co
 ## Desenvolvimento do Projeto
 
 ## Etapa 1:
-## Organização e Metodologia:
+### Organização e Metodologia:
 Para gerenciar o desenvolvimento do projeto, utilizamos a plataforma Trello e adotamos a metodologia ágil de gestão SCRUM. No Trello, definimos prazos e atribuímos tarefas a cada membro da equipe, garantindo um fluxo de trabalho organizado.
 
 ## Desenvolvimento Inicial:
