@@ -1,5 +1,8 @@
 # Agenda de contatos
 
+## Acesse aqui:
+https://agendadecontatos.netlify.app/
+
 ## Equipe
 - João Pedro Gomes
 - Marcela Ellen
