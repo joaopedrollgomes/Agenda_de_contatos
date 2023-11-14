@@ -49,7 +49,7 @@ Salientamos que a página está sujeita a atualizações contínuas em relação
 Utilizamos o GitHub como ferramenta de versionamento de código. Optamos por criar uma branch dedicada para cada um dos membros da equipe, permitindo um desenvolvimento paralelo e a integração de código de maneira organizada.
 
 ## Referências:
-Como referência, baseamos nosso projeto nos códigos apresentados nas aulas ministradas pelo professor Reydne Bruno.
+Como referência, baseamos nosso projeto nos códigos apresentados nas aulas ministradas pelo professor Reydne Bruno, e utilizamos o site https://www.flaticon.com/br/ para baixar o ícones utilizados no projeto.
 
 ## Considerações Finais:
 O projeto da agenda de contatos foi desenvolvido em equipe como parte de nossos estudos na Formação Acelerada em Programação, com o objetivo de aplicar conhecimentos em um contexto prático, aprimorar nossas habilidades de programação e enriquecer nosso portfólio.
